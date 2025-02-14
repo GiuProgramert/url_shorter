@@ -6,10 +6,12 @@ import GradientCircle from "../components/GradientCircle";
 import SecondaryButton from "../components/SecondaryButton";
 import ToggleThemeButton from "../components/ToggleThemeButton";
 import useAuth from "../hooks/useUser";
+import useModal from "../hooks/useModal";
 
 export default function Layout() {
   const { theme } = useTheme();
   const { auth } = useAuth();
+  const { openModal } = useModal();
 
   const fillColor = theme === "dark" ? "#6F69DC" : "#D68E29";
 
@@ -21,6 +23,7 @@ export default function Layout() {
             <>
               <SecondaryButton
                 text="Login"
+                onClick={() => openModal("login")}
                 icon={<LoginIcon fill={fillColor} />}
               />
               <SecondaryButton
@@ -32,7 +35,7 @@ export default function Layout() {
           <ToggleThemeButton />
         </div>
       </nav>
-      <main className="grid place-content-center">
+      <main className="flex flex-col items-center gap-8">
         <Outlet />
       </main>
       <footer className="relative">
