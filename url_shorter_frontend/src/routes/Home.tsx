@@ -1,4 +1,3 @@
-import Login from "../components/forms/Login";
 import Input from "../components/Input";
 import PrimaryButton from "../components/PrimaryButton";
 
@@ -21,7 +20,6 @@ export default function Home() {
         />
         <PrimaryButton className="w-[378px]">Shorten URL</PrimaryButton>
       </section>
-      <Login />
     </>
   );
 }

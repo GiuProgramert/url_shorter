@@ -28,6 +28,7 @@ export default function Layout() {
               />
               <SecondaryButton
                 text="Register"
+                onClick={() => openModal("register")}
                 icon={<RegisterIcon fill={fillColor} />}
               />
             </>

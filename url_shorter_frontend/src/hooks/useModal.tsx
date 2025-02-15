@@ -14,5 +14,8 @@ export default function useModal() {
     setModal(undefined);
   };
 
-  return { modal, isOpen, openModal, closeModal };
+  const isOpenLogin = modal === "login" && isOpen;
+  const isOpenRegister = modal === "register" && isOpen;
+
+  return { modal, isOpen, openModal, closeModal, isOpenLogin, isOpenRegister };
 }
