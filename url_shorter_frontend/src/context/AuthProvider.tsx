@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { UserAuth } from "../schemas/User";
+import { UserAuth } from "../schemas/Auth";
 import { AuthContext } from "./AuthContext";
 
 export default function AuthProvider({

@@ -1,34 +1,18 @@
 import useModal from "../../hooks/useModal";
 import Modal from "../Modal";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
 import Input from "../Input";
 import PrimaryButton from "../PrimaryButton";
-
-type LoginFormInputs = z.infer<typeof LoginSchema>;
-
-const LoginSchema = z.object({
-  username: z.string().min(1, "Username is required"),
-  password: z.string().min(8, "Password must be at least 8 characters"),
-});
+import LoginController from "../../controllers/LoginController";
 
 export default function Login() {
-  const { modal, isOpen, closeModal } = useModal();
+  const { modal, isOpen, closeModal, openModal } = useModal();
 
   const {
     register,
     handleSubmit,
+    onSubmit,
     formState: { errors },
-  } = useForm<LoginFormInputs>({
-    resolver: zodResolver(LoginSchema),
-  });
-
-  const onSubmit = (data: LoginFormInputs) => {
-    console.log(data);
-  };
-
-  console.log({errors});
+  } = LoginController();
 
   return (
     <Modal isOpen={modal === "login" && isOpen} onClose={closeModal}>
@@ -54,8 +38,20 @@ export default function Login() {
           {...register("password")}
         />
 
-        <PrimaryButton type="submit" className="w-[378px] mt-14">
-          Login
+        <div className="my-4 text-base font-medium">
+          <span className="text-black dark:text-white">
+            You don’t have an acount{" "}
+          </span>
+          <button
+            className="text-[#6d23b7] dark:text-[#be7cff] hover:underline"
+            onClick={() => openModal("register")}
+          >
+            Sign up
+          </button>
+        </div>
+
+        <PrimaryButton type="submit" className="w-[378px]">
+          Sign in
         </PrimaryButton>
       </form>
     </Modal>
