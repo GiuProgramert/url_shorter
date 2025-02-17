@@ -1,21 +1,19 @@
-import useModal from "../../hooks/useModal";
 import Modal from "../Modal";
 import Input from "../Input";
 import PrimaryButton from "../PrimaryButton";
-import LoginController from "../../controllers/LoginController";
+import useLoginController from "../../controllers/LoginController";
 
 export default function Login() {
-  const { modal, isOpen, closeModal, openModal } = useModal();
-
   const {
     register,
     handleSubmit,
     onSubmit,
     formState: { errors },
-  } = LoginController();
+    modalInfo: { isOpenLogin, closeModal, openModal },
+  } = useLoginController();
 
   return (
-    <Modal isOpen={modal === "login" && isOpen} onClose={closeModal}>
+    <Modal isOpen={isOpenLogin} onClose={closeModal}>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-[21px] items-center"
@@ -40,7 +38,7 @@ export default function Login() {
 
         <div className="my-4 text-base font-medium">
           <span className="text-black dark:text-white">
-            You don’t have an acount{" "}
+            You don't have an acount{" "}
           </span>
           <button
             className="text-[#6d23b7] dark:text-[#be7cff] hover:underline"
