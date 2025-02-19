@@ -21,18 +21,18 @@ export default function Shorted() {
       <h1 className="text-[#0F0E0E] dark:text-white font-bold text-[36px] text-center">
         Short URL
       </h1>
-      <section className="bg-[#DDD] dark:bg-[#434343] p-10 rounded-xl w-[644px] text-[#0F0E0E] dark:text-white flex flex-col items-center gap-[21px]">
+      <section className="bg-[#DDD] dark:bg-[#434343] p-10 rounded-xl max-w-sm sm:max-w-xl text-[#0F0E0E] dark:text-white flex flex-col items-center gap-[21px]">
         <h2 className="text-[#0F0E0E] dark:text-white font-semibold text-[30px]">
           Your shortened URL
         </h2>
 
         <Input
-          className="w-[478px]"
+          className="w-[300px] sm:w-[478px]"
           placeholder="Enter link here"
           disabled
           defaultValue={`${envs.REDIRECT_URL}/${slug}`}
         />
-        <div className="flex gap-4 w-[378px]">
+        <div className="flex gap-4 flex-col sm:justify-center sm:flex-row w-full">
           <PrimaryButton
             className="grid-cols-[1fr,auto] gap-4"
             onClick={handleCopy}
