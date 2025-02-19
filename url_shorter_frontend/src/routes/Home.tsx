@@ -12,24 +12,24 @@ export default function Home() {
 
   return (
     <>
-      <h1 className="text-[#0F0E0E] dark:text-white font-bold text-[36px] text-center">
+      <h1 className="text-[#0F0E0E] dark:text-white font-bold text-3xl sm:text-4xl text-center">
         Short URL
       </h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="bg-[#DDD] dark:bg-[#434343] p-10 rounded-xl w-[644px] text-[#0F0E0E] dark:text-white flex flex-col items-center gap-[21px]"
+        className="bg-[#DDD] dark:bg-[#434343] p-10 rounded-xl max-w-sm sm:max-w-xl text-[#0F0E0E] dark:text-white flex flex-col items-center gap-[21px]"
       >
-        <h2 className="text-[#0F0E0E] dark:text-white font-semibold text-[30px]">
+        <h2 className="text-[#0F0E0E] dark:text-white font-semibold text-xl sm:text-3xl">
           Paste the URL to be shortened
         </h2>
 
         <Input
-          className="w-[478px]"
+          className="w-[300px] sm:w-[478px]"
           placeholder="Enter link here"
           errorMessage={errors.url?.message}
           {...register("url")}
         />
-        <PrimaryButton className="w-[378px]" type="submit">
+        <PrimaryButton className="w-[280px] sm:w-[378px]" type="submit">
           Shorten URL
         </PrimaryButton>
       </form>

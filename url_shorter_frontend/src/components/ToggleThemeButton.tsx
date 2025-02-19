@@ -9,5 +9,12 @@ export default function ToggleThemeButton() {
   const text = theme === "dark" ? "Light Mode" : "Dark Mode";
   const icon = theme === "dark" ? <DarkModeIcon /> : <LightModeIcon />;
 
-  return <SecondaryButton text={text} icon={icon} onClick={toggleTheme} />;
+  return (
+    <SecondaryButton
+      text={text}
+      icon={icon}
+      onClick={toggleTheme}
+      textClassName="hidden sm:block"
+    />
+  );
 }

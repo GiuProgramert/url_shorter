@@ -23,19 +23,19 @@ export default function Register() {
         </h2>
 
         <Input
-          className="w-[478px]"
+          className="w-[280px] sm:w-[378px]"
           placeholder="Enter your username"
           errorMessage={errors.username?.message}
           {...register("username")}
         />
         <Input
-          className="w-[478px]"
+          className="w-[280px] sm:w-[378px]"
           placeholder="Enter your email"
           errorMessage={errors.email?.message}
           {...register("email")}
         />
 
-        <div className="flex gap-4 w-[478px]">
+        <div className="flex gap-4 flex-col sm:flex-row w-[280px] sm:w-[378px]">
           <Input
             className="w-full"
             placeholder="First name"
@@ -51,14 +51,14 @@ export default function Register() {
         </div>
 
         <Input
-          className="w-[478px]"
+          className="w-[280px] sm:w-[378px]"
           placeholder="Password"
           type="password"
           errorMessage={errors.password?.message}
           {...register("password")}
         />
         <Input
-          className="w-[478px]"
+          className="w-[280px] sm:w-[378px]"
           placeholder="Confirm your password"
           type="password"
           errorMessage={errors.password2?.message}
@@ -77,7 +77,7 @@ export default function Register() {
           </button>
         </div>
 
-        <PrimaryButton type="submit" className="w-[378px]">
+        <PrimaryButton type="submit" className="w-[300px] sm:w-[378px]">
           Sign up
         </PrimaryButton>
       </form>

@@ -2,6 +2,7 @@ interface Props {
   text: string;
   icon: React.ReactNode;
   className?: string;
+  textClassName?: string;
   onClick?: () => void;
 }
 
@@ -9,6 +10,7 @@ export default function SecondaryButton({
   text,
   icon,
   className = "",
+  textClassName = "",
   onClick,
 }: Props) {
   return (
@@ -20,7 +22,7 @@ export default function SecondaryButton({
       onClick={onClick}
     >
       <div className="flex gap-4 items-center">
-        <span className="font-semibold">{text}</span>
+        <span className={`font-semibold ${textClassName}`}>{text}</span>
         <span className="text-[#D68E29] dark:text-[#6F69DC]">{icon}</span>
       </div>
     </button>

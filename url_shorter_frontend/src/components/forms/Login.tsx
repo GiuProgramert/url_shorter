@@ -23,13 +23,13 @@ export default function Login() {
         </h2>
 
         <Input
-          className="w-[478px]"
+          className="w-[300px] sm:w-[478px]"
           placeholder="Username"
           errorMessage={errors.username?.message}
           {...register("username")}
         />
         <Input
-          className="w-[478px]"
+          className="w-[300px] sm:w-[478px]"
           placeholder="Password"
           type="password"
           errorMessage={errors.password?.message}
@@ -48,7 +48,7 @@ export default function Login() {
           </button>
         </div>
 
-        <PrimaryButton type="submit" className="w-[378px]">
+        <PrimaryButton type="submit" className="w-[300px] sm:w-[378px]">
           Sign in
         </PrimaryButton>
       </form>

@@ -18,7 +18,7 @@ export default function Modal({ isOpen, onClose, children }: Props) {
       {/* Modal Container */}
       <div className="flex items-center justify-center min-h-screen p-4">
         <div
-          className="relative bg-[#DDDDDD] text-[#0F0E0E] dark:text-[#FFFFFF] dark:bg-[#434343] rounded-lg mx-auto shadow-xl z-20 w-[563px] py-8"
+          className="relative bg-[#DDDDDD] text-[#0F0E0E] dark:text-[#FFFFFF] dark:bg-[#434343] rounded-lg mx-auto shadow-xl z-20 max-w-sm sm:max-w-xl py-8"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Close Button */}
