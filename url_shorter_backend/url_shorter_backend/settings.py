@@ -32,7 +32,12 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "insecure-secret-key")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG", "True") == "True"
 
-ALLOWED_HOSTS = []
+allowed_hosts = os.environ.get("ALLOWED_HOSTS", None)
+
+if os.environ.get("ALLOWED_HOSTS", None) is None:
+    ALLOWED_HOSTS = []
+else:
+    ALLOWED_HOSTS = allowed_hosts.split(",")
 
 
 # Application definition
